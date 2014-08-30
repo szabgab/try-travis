@@ -4,8 +4,6 @@ my %conf = (
 	NAME         => 'Try::Travis',
 	VERSION_FROM => 'lib/Try/Travis.pm',
 	PREREQ_PM    => {
-		#'IO::Tty' => 1.11,
-		#'IO::Pty' => 1.11,
 
 		# standard modules:
 		'POSIX'      => 0,
@@ -38,24 +36,31 @@ if (eval { ExtUtils::MakeMaker->VERSION(6.46) }) {
 my %configure_requires = (
         'ExtUtils::MakeMaker' => '6.64',
 );
-if (eval { ExtUtils::MakeMaker->VERSION(6.52) }) {
-	$con{CONFIGURE_REQUIRES} = \%configure_requires;
-} else {
-	%{ $conf{PREREQ_PM} } = (%{ $conf{PREREQ_PM} }, %configure_requires);
-}
-
+my %build_requires = ();
 my %test_requires = (
 	'Test::More'      => '1.00',
 	'Test::Exception' => '0.32',
 	# standard modules:
 	'File::Temp'      => 0,
 );
+
+
+###   merging data "standard code"
+if (eval { ExtUtils::MakeMaker->VERSION(6.52) }) {
+	$con{CONFIGURE_REQUIRES} = \%configure_requires;
+} else {
+	%{ $conf{PREREQ_PM} } = (%{ $conf{PREREQ_PM} }, %configure_requires);
+}
+
+if (eval { ExtUtils::MakeMaker->VERSION(6.5503) }) {
+	$conf{BUILD_REQUIRES} = \%build_requires;
+} else {
+	%{ $conf{PREREQ_PM} } = (%{ $conf{PREREQ_PM} }, %build_requires);
+}
 if (eval { ExtUtils::MakeMaker->VERSION(6.64) }) {
 	$conf{TEST_REQUIRES} = \%test_requires;
 } else {
 	%{ $conf{PREREQ_PM} } = (%{ $conf{PREREQ_PM} }, %test_requires);
 }
-
-
 WriteMakefile(%conf);
 
