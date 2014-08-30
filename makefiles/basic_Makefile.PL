@@ -27,7 +27,7 @@ WriteMakefile(
 	#	'File::Temp' => 0,
 	#},
 	ABSTRACT_FROM => 'lib/Try/Travis.pm',
-	($ExtUtils::MakeMaker::VERSION >= 6.3002 ? ('LICENSE'=> 'perl') : ()),
+	#($ExtUtils::MakeMaker::VERSION >= 6.3002 ? ('LICENSE'=> 'perl') : ()),
 	#(eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
 	#	'meta-spec' => { version => 2 },
 	#	resources => {
