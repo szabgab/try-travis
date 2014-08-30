@@ -13,5 +13,6 @@ WriteMakefile(
 		'Errno'      => 0,
 	},
 	ABSTRACT_FROM => 'lib/Try/Travis.pm',
+	($ExtUtils::MakeMaker::VERSION >= 6.3002 ? ('LICENSE'=> 'perl') : ()),
 );
 

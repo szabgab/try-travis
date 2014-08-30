@@ -28,16 +28,16 @@ WriteMakefile(
 	#},
 	ABSTRACT_FROM => 'lib/Try/Travis.pm',
 	($ExtUtils::MakeMaker::VERSION >= 6.3002 ? ('LICENSE'=> 'perl') : ()),
-	#(eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
-	#	'meta-spec' => { version => 2 },
-	#	resources => {
-	#		repository => {
-	#			type => 'git',
-	#			url  => 'http://github.com/szabgab/expect.pm.git',
-	#			web  => 'http://github.com/szabgab/expect.pm',
-	#		}
-	#	}})
-	#	: ()
-	#),
+	(eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
+		'meta-spec' => { version => 2 },
+		resources => {
+			repository => {
+				type => 'git',
+				url  => 'http://github.com/szabgab/try-travis.git',
+				web  => 'http://github.com/szabgab/try-travis',
+			}
+		}})
+		: ()
+	),
 );
 
