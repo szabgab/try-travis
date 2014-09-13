@@ -13,7 +13,7 @@ my %conf = (
 		'Exporter'   => 0,
 		'Errno'      => 0,
 
-		'Geo::IP'    => 0,
+		#'Geo::IP'    => 0,
 	},
 	ABSTRACT_FROM => 'lib/Try/Travis.pm',
 );
@@ -45,7 +45,6 @@ my %test_requires = (
 	# standard modules:
 	'File::Temp'      => 0,
 );
-
 
 ###   merging data "standard code"
 if (eval { ExtUtils::MakeMaker->VERSION(6.52) }) {
