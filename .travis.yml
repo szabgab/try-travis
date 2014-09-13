@@ -12,7 +12,9 @@ perl:
 before_install:
   - sudo apt-get -y update
   - sudo apt-get install -y geoip-database
-  - ls -l /usr/local/var/
-  - ls -l /usr/local/var/GeoIP/
+  - sudo ls -l /usr/
+  - sudo ls -l /usr/var
+  - sudo ls -l /usr/local/var/
+  - sudo ls -l /usr/local/var/GeoIP/
 after_failure:
   - perl report.pl
