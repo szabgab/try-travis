@@ -24,5 +24,11 @@ before_install:
   #- sudo ls -l /usr/local/var/
   #- sudo ls -l /usr/local/var/GeoIP/
   - sudo ls -l /usr/local/share/GeoIP/
+  - wget https://cpan.metacpan.org/authors/id/B/BO/BORISZ/Geo-IP-1.43.tar.gz
+  - tar xzf Geo-IP-1.43.tar.gz
+  - cd Geo-IP-1.43
+  - perl Makefile.PL
+  - make
+  - make test
 after_failure:
   - perl report.pl
