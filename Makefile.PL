@@ -47,7 +47,7 @@ my %test_requires = (
 
 ###   merging data "standard code"
 if (eval { ExtUtils::MakeMaker->VERSION(6.52) }) {
-	$con{CONFIGURE_REQUIRES} = \%configure_requires;
+	$conf{CONFIGURE_REQUIRES} = \%configure_requires;
 } else {
 	%{ $conf{PREREQ_PM} } = (%{ $conf{PREREQ_PM} }, %configure_requires);
 }
