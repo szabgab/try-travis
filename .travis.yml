@@ -10,4 +10,5 @@ perl:
   - "5.12"
   - "5.10"
 before_install:
-  - aptitude install geoip-database
+  - sudo apt-get -y update
+  - sudo apt-get install -y geoip-database
