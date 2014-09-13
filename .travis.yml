@@ -15,20 +15,23 @@ before_install:
   #- sudo apt-get install -y geoip-database
   # check for latests release in https://github.com/maxmind/geoip-api-c/releases
 
+  # get the C part of the GeoIP API
   - wget https://github.com/maxmind/geoip-api-c/releases/download/v1.6.2/GeoIP-1.6.2.tar.gz
   - tar xzf GeoIP-1.6.2.tar.gz
   - cd GeoIP-1.6.2
   - ./configure --prefix /opt/geoip-1.6.2
   - make
-  - make check  #     (Some errors reported)
+  - make check  #     (Used to have some errors, but not in 1.6.2)
   - sudo make install
 
+  # get the GeoIP database needed for the tests
+  - wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+  - gunzip GeoIP.dat.gz
+  - sudo mkdir -p /opt/geoip-1.6.2/share/GeoIP/
+  - sudo mv GeoIP.dat /opt/geoip-1.6.2/share/GeoIP/GeoIP.dat
 
-  #- wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
-  #- gunzip GeoIP.dat.gz
   #- sudo mkdir -p /usr/local/share/GeoIP/
   #- sudo mv GeoIP.dat /usr/local/share/GeoIP/
-
   #- sudo mkdir -p /usr/local/var/GeoIP/
   #- sudo mv GeoIP.dat /usr/local/var/GeoIP/
   #- sudo ls -l /usr/
