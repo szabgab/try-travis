@@ -13,7 +13,7 @@ my %conf = (
 		'Exporter'   => 0,
 		'Errno'      => 0,
 
-		'Geo::Ip'    => 0,
+		'Geo::IP'    => 0,
 	},
 	ABSTRACT_FROM => 'lib/Try/Travis.pm',
 );
