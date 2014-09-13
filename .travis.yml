@@ -17,7 +17,7 @@ before_install:
   - sudo mkdir -p /usr/local/var/GeoIP/
   - sudo mv GeoIP.dat /usr/local/var/GeoIP/
   - sudo ls -l /usr/
-  - sudo ls -l /usr/var
+  - sudo ls -l /usr/local/
   - sudo ls -l /usr/local/var/
   - sudo ls -l /usr/local/var/GeoIP/
 after_failure:
