@@ -10,24 +10,37 @@ perl:
   - "5.12"
   - "5.10"
 before_install:
-  - sudo apt-get -y update
-  - sudo apt-get install -y libgeoip-dev libgeoip1
+  #- sudo apt-get -y update
+  #- sudo apt-get install -y libgeoip-dev libgeoip1
   #- sudo apt-get install -y geoip-database
-  - wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
-  - gunzip GeoIP.dat.gz
-  - sudo mkdir -p /usr/local/share/GeoIP/
-  - sudo mv GeoIP.dat /usr/local/share/GeoIP/
+  # check for latests release in https://github.com/maxmind/geoip-api-c/releases
+
+   - wget https://github.com/maxmind/geoip-api-c/releases/download/v1.6.2/GeoIP-1.6.2.tar.gz
+   - tar xzf GeoIP-1.6.2.tar.gz
+   - cd GeoIP-1.6.2
+   - ./configure --prefix /opt/geoip-1.6.2
+   - make
+   - make check  #     (Some errors reported)
+   - make install
+
+
+  #- wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+  #- gunzip GeoIP.dat.gz
+  #- sudo mkdir -p /usr/local/share/GeoIP/
+  #- sudo mv GeoIP.dat /usr/local/share/GeoIP/
+
   #- sudo mkdir -p /usr/local/var/GeoIP/
   #- sudo mv GeoIP.dat /usr/local/var/GeoIP/
   #- sudo ls -l /usr/
   #- sudo ls -l /usr/local/
   #- sudo ls -l /usr/local/var/
   #- sudo ls -l /usr/local/var/GeoIP/
-  - sudo ls -l /usr/local/share/GeoIP/
+  #- sudo ls -l /usr/local/share/GeoIP/
+
   - wget https://cpan.metacpan.org/authors/id/B/BO/BORISZ/Geo-IP-1.43.tar.gz
   - tar xzf Geo-IP-1.43.tar.gz
   - cd Geo-IP-1.43
-  - perl Makefile.PL
+  - perl Makefile.PL LIBS='-L/opt/geoip-1.6.2/lib' INC='-I/opt/geoip-1.6.2/include'
   - make
   - make test
 after_failure:
