@@ -15,7 +15,7 @@ before_install:
   - wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
   - gunzip GeoIP.dat.gz
   - sudo mkdir -p /usr/local/var/GeoIP/
-  - sudo mv GeoIP.dat.gz /usr/local/var/GeoIP/
+  - sudo mv GeoIP.dat /usr/local/var/GeoIP/
   - sudo ls -l /usr/
   - sudo ls -l /usr/var
   - sudo ls -l /usr/local/var/
