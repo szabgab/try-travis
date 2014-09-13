@@ -15,13 +15,13 @@ before_install:
   #- sudo apt-get install -y geoip-database
   # check for latests release in https://github.com/maxmind/geoip-api-c/releases
 
-   - wget https://github.com/maxmind/geoip-api-c/releases/download/v1.6.2/GeoIP-1.6.2.tar.gz
-   - tar xzf GeoIP-1.6.2.tar.gz
-   - cd GeoIP-1.6.2
-   - ./configure --prefix /opt/geoip-1.6.2
-   - make
-   - make check  #     (Some errors reported)
-   - make install
+  - wget https://github.com/maxmind/geoip-api-c/releases/download/v1.6.2/GeoIP-1.6.2.tar.gz
+  - tar xzf GeoIP-1.6.2.tar.gz
+  - cd GeoIP-1.6.2
+  - ./configure --prefix /opt/geoip-1.6.2
+  - make
+  - make check  #     (Some errors reported)
+  - make install
 
 
   #- wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
