@@ -50,5 +50,6 @@ perl:
 #  - perl report.pl
 
 before_install:
-  - cpanm --notest Test::Version
+  #- cpanm --notest Test::Version
+  - apt-get install libtest-version-perl
 
