@@ -2,7 +2,20 @@ dist: xenial
 language: python
 python:
   - "3.6"
-script: docker -v
+
+install:
+  - docker run -it --rm hello-world
+script:
+  - docker -v
+  - ls qqrq
+services:
+  - docker
+
+
+notifications:
+  email:
+    recipients:
+      secure: c6AsT8hgiSb2PE27lqQL0hwbujhKDl0iRDQshSjrw+JIlaH7XbusT2zqVMAdhbFTWFogKc4LY9ytK2K2i2FVYp015p/14SRSK8HBYOpXJ3uy+vGBS2Eyovq0WSnTki7MLpx1GXhPOUyuiiLhtgHiTRzTK/3BdTlIOc9uKnw7Urw=
 
 
 
