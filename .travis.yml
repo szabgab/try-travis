@@ -12,12 +12,14 @@ script:
 services:
   - docker
 
+deploy:
+  - echo Deploy
 
-notifications:
-  email:
-    recipients:
-      - secure: GcKj15KvdJeT1466EB6X0NQ07O6dpMwaZx9CJb53aISWU5SQPHcUTD0WKu+mNA73SYPx/KdDKcKVB30JPQ7w64xPcgB5xRIGj6kzyxBuwfKoHazsDBUsyq171FPfC+1DMYCnm38Tgs/XrYQuF7gGiM45nZnsBKTtq2tTmAgcN3s=
-      - secure: c6AsT8hgiSb2PE27lqQL0hwbujhKDl0iRDQshSjrw+JIlaH7XbusT2zqVMAdhbFTWFogKc4LY9ytK2K2i2FVYp015p/14SRSK8HBYOpXJ3uy+vGBS2Eyovq0WSnTki7MLpx1GXhPOUyuiiLhtgHiTRzTK/3BdTlIOc9uKnw7Urw=
+#notifications:
+#  email:
+#    recipients:
+#      - secure: GcKj15KvdJeT1466EB6X0NQ07O6dpMwaZx9CJb53aISWU5SQPHcUTD0WKu+mNA73SYPx/KdDKcKVB30JPQ7w64xPcgB5xRIGj6kzyxBuwfKoHazsDBUsyq171FPfC+1DMYCnm38Tgs/XrYQuF7gGiM45nZnsBKTtq2tTmAgcN3s=
+#      - secure: c6AsT8hgiSb2PE27lqQL0hwbujhKDl0iRDQshSjrw+JIlaH7XbusT2zqVMAdhbFTWFogKc4LY9ytK2K2i2FVYp015p/14SRSK8HBYOpXJ3uy+vGBS2Eyovq0WSnTki7MLpx1GXhPOUyuiiLhtgHiTRzTK/3BdTlIOc9uKnw7Urw=
 
 
 
