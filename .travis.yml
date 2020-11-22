@@ -13,7 +13,8 @@ services:
   - docker
 
 deploy:
-  - echo Deploy
+  provider: script
+  script: echo Deploy
 
 #notifications:
 #  email:
