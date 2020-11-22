@@ -7,8 +7,8 @@ install:
   - docker run -it --rm hello-world
 script:
   - docker -v
-  - echo $SECURE_VAR
-  - ls qqrq
+#  - echo $SECURE_VAR
+#  - ls qqrq
 services:
   - docker
 
