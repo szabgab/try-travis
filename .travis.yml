@@ -14,7 +14,9 @@ services:
 
 deploy:
   provider: script
-  script: echo Deploy
+  script: echo Deploy by Gabor
+  on:
+    branch: master
 
 #notifications:
 #  email:
