@@ -7,14 +7,18 @@ install:
   - docker run -it --rm hello-world
 script:
   - docker -v
+  - echo hello world > results.txt
 #  - echo $SECURE_VAR
 #  - ls qqrq
 services:
   - docker
 
 deploy:
+  skip_cleanup: true
   provider: script
-  script: echo Deploy by Gabor
+  script:
+    - ls -l
+    - echo Deploy by Gabor
   on:
     branch: master
 
